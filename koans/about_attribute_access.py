@@ -10,12 +10,13 @@ from runner.koan import *
 class AboutAttributeAccess(Koan):
 
     class TypicalObject:
-        pass
+        def foobar(self):
+            raise NotImplementedError("Not implemented.")
 
     def test_calling_undefined_functions_normally_results_in_errors(self):
         typical = self.TypicalObject()
 
-        with self.assertRaises(___): typical.foobar()
+        with self.assertRaises(NotImplementedError): typical.foobar()
 
     def test_calling_getattribute_causes_an_attribute_error(self):
         typical = self.TypicalObject()
