@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "python-koans"
+version = "0.1.0"
+description = ""
+authors = ["Marina Cabrera <marina@tecno.capital>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+birdseye = "^0.9.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
