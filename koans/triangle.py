@@ -16,9 +16,23 @@
 # and
 #   about_triangle_project_2.py
 #
+def validate_sides(sides: list):
+        for i in range(len(sides)):
+            if not sides[i] > 0:
+                raise TriangleError
+            sides_copy = list(sides)
+            isolated_side = sides_copy.pop(i)
+            if not sum(sides_copy) > isolated_side:
+                raise TriangleError
+
 def triangle(a, b, c):
-    # DELETE 'PASS' AND WRITE THIS CODE
-    pass
+    validate_sides([a, b, c])
+    
+    if a == b == c:
+        return 'equilateral'
+    elif a == b or a == c or b == c:
+        return 'isosceles'
+    return 'scalene'
 
 # Error class used in part 2.  No need to change this code.
 class TriangleError(Exception):
